@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Proyecto_Medicos.Models.Medicos>
+
+@{
+        ViewData["Title"] = "Medicos";        
+}
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Inicio De Sesion</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+
+<center>
+    <h1>Encuentra al mejor  Medicos</h1>
+</center>
+
+
+<div class="mb-4 mt-4">
+    @using (Html.BeginForm())
+    {
+        <p class="fw-bold">Busqueda de Especialidad:</p>@Html.TextBox("Especialidad", null, new {@class = "form-control mb-2 mt-2"})
+        
+        <button class="btn btn-primary" type="submit">Consultar</button>
+        
+    }
+</div>
+
+<div class="container">
+    <div class="row gy-3 my-3">
+        @foreach (var item in Model)
+        {
+
+            <div class="col-sm-4">
+                <div class="card" style="width: 25rem; height: 40rem;">
+                    <img src="@Url.Content("/MedicoImagenes/" + item.codMed + ".png")" width="300px" height="300px" class="card-img-top" alt="@item.nomMed">
+                    <div class="card-body">
+                        <ul>
+                            <li>Codigo del Medico: @Html.DisplayFor(modelItem => item.codMed)</li>
+                            <li>Nombre del Medico: @Html.DisplayFor(modelItem => item.nomMed)</li>
+                            <li>AÑo Colegiado: @Html.DisplayFor(modelItem => item.anioColegio)</li>
+                            <li>Nombre del Distrito: @Html.DisplayFor(modelItem => item.codDis)</li>
+                            <li>Especialidad: @Html.DisplayFor(modelItem => item.codEsp)</li>
+                            <li>Horario: @Html.DisplayFor(modelItem => item.codHora)</li>
+                            <li>Ocupado: @Html.DisplayFor(modelItem => item.ocupado)</li>                     
+                        </ul>
+                        <div style="margin: 2rem; text-align:center">
+                            <div>
+                                @if (string.Equals(item.ocupado, "NO", StringComparison.OrdinalIgnoreCase))
+                                {
+                                    <p>
+                                        <a asp-action="CreateCita" class="btn btn-primary" >Seleccionar</a>
+                                    </p>
+                                }
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<div class="alert alert-success mt-2">
+    @ViewBag.total
+</div>
+<script>
+    window.watsonAssistantChatOptions = {
+        integrationID: "dd6b4f9e-9acb-4b00-8f37-4dd0af5535b2", // The ID of this integration.
+        region: "us-south", // The region your integration is hosted in.
+        serviceInstanceID: "b03a65a3-623f-4005-ad71-f308fb6ff9d9", // The ID of your service instance.
+        onLoad: function (instance) { instance.render(); }
+    };
+    setTimeout(function () {
+        const t = document.createElement('script');
+        t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+        document.head.appendChild(t);
+    });
+</script>

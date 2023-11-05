@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\css\style - Copia.css" />
+    <Content Remove="wwwroot\css\style.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\style - Copia.css" />
+    <None Include="wwwroot\css\style.css" />
+    <None Include="wwwroot\Login\Login.png" />
+    <None Include="wwwroot\MedicoImagenes\M0001.png" />
+    <None Include="wwwroot\MedicoImagenes\M0002.png" />
+    <None Include="wwwroot\MedicoImagenes\M0003.png" />
+    <None Include="wwwroot\MedicoImagenes\M0004.png" />
+    <None Include="wwwroot\MedicoImagenes\M0005.png" />
+    <None Include="wwwroot\MedicoImagenes\M0006.png" />
+    <None Include="wwwroot\MedicoImagenes\M0007.png" />
+    <None Include="wwwroot\MedicoImagenes\M0008.png" />
+    <None Include="wwwroot\MedicoImagenes\M0009.png" />
+    <None Include="wwwroot\MedicoImagenes\M0010.png" />
+    <None Include="wwwroot\MedicoImagenes\M0011.png" />
+    <None Include="wwwroot\MedicoImagenes\M0012.png" />
+    <None Include="wwwroot\MedicoImagenes\M0013.png" />
+    <None Include="wwwroot\MedicoImagenes\M0014.png" />
+    <None Include="wwwroot\MedicoImagenes\M0015.png" />
+    <None Include="wwwroot\MedicoImagenes\M0016.png" />
+    <None Include="wwwroot\MedicoImagenes\M0017.png" />
+    <None Include="wwwroot\MedicoImagenes\M0018.png" />
+    <None Include="wwwroot\MedicoImagenes\M0019.png" />
+    <None Include="wwwroot\MedicoImagenes\M0020.png" />
+    <None Include="wwwroot\MedicoImagenes\M0021.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,27 @@
+body {
+    background-color: #e6f8fa;
+}
+.centrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centrar .btn:first-child {
+    margin-right:20px;
+}
+
+.navbar-brand {
+    flex-grow: 15;
+    text-align: left;
+}
+
+.navbar-nav {
+    justify-content: flex-start;
+}
+
+.nav-link {
+    margin-right: 20px;
+}
+
+

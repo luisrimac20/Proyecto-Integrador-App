@@ -1,0 +1,95 @@
+﻿@model RegistroUsuarios
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Inicio De Sesion</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+<body>
+
+    <div class="row mt-5">
+        <div class="col-sm-4 offset-sm-4">
+            <div>
+                <center>
+                    <h1>Registro de Usuario</h1>
+                </center>
+            </div>
+            <form asp-controller="Acceso" asp-action="RegistroUsuario" method="post">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombres</label>
+                    <input type="text" class="form-control" placeholder="Ingresa tus nombres" asp-for="nombre">
+                    <span asp-validation-for="nombre" class="text-danger"></span>
+
+                </div>
+                <div class="mb-3">
+                    <label for="apellido" class="form-label">Apellidos</label>
+                    <input type="text" class="form-control" placeholder="Ingresa tus apellido" asp-for="apellido">
+                    <span asp-validation-for="apellido" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Correo Electronico</label>
+                    <input type="email" class="form-control" placeholder="Confirma tu correo electronico" asp-for="correo">
+                    <span asp-validation-for="correo" class="text-danger"></span>
+
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" placeholder="Ingresa tu contraseña" asp-for="clave">
+                    <span asp-validation-for="clave" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" placeholder="Confirma tu contraseña" asp-for="confimar_clave">
+                    <span asp-validation-for="confimar_clave" class="text-danger"></span>
+                </div>
+
+                
+
+
+                <div class="d-flex justify-content-center align-items-center">
+                    <button type="submit" value="Registrar" class="btn btn-primary me-3">
+                        Registrar
+                    </button>
+                    <a asp-action="Index" class="btn btn-primary">
+                        Regresar
+                    </a>
+                </div>
+
+                <div class="mb-3">
+                    @if (ViewBag.msj != null)
+                    {
+                        <div class="alert alert-success" role="alert">
+                            @ViewBag.msj
+                        </div>
+                    }
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+<script>
+    window.watsonAssistantChatOptions = {
+        integrationID: "dd6b4f9e-9acb-4b00-8f37-4dd0af5535b2", // The ID of this integration.
+        region: "us-south", // The region your integration is hosted in.
+        serviceInstanceID: "b03a65a3-623f-4005-ad71-f308fb6ff9d9", // The ID of your service instance.
+        onLoad: function (instance) { instance.render(); }
+    };
+    setTimeout(function () {
+        const t = document.createElement('script');
+        t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+        document.head.appendChild(t);
+    });
+</script>
+

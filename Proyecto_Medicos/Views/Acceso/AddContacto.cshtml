@@ -1,0 +1,101 @@
+﻿@model Proyecto_Medicos.Models.Contacto
+
+@{
+    ViewData["Title"] = "AddContacto";
+}
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Inicio De Sesion</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" href="~/css/style - Copia.css" />
+</head>
+
+<div>
+        <center>
+        <h1>Contáctanos</h1>
+        <h4>Nuestro equipo <strong>se pondrá en contacto contigo</strong> </h4>
+        <center />
+</div>
+
+<div class="row">   
+        <div class="container">
+            <div class="mx-auto" style="width: 500px;">
+                <form asp-action="AddContacto">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group">
+                    <label asp-for="name" class="control-label"></label>
+                    <input asp-for="name" placeholder="Ingresar tu nombre " class="form-control" />
+                    <span asp-validation-for="name"  class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="email" class="control-label"></label>
+                        <input asp-for="email" placeholder="Ingresa un corre electronico " class="form-control" />
+                        <span asp-validation-for="email" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="phone" class="control-label"></label>
+                        <input asp-for="phone" placeholder="Ingresa un corre electronico " class="form-control" />
+                        <span asp-validation-for="phone" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="issue" class="control-label"></label>
+                        <input asp-for="issue" placeholder="Ingresa el asunto " class="form-control" />
+                        <span asp-validation-for="issue" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="message" class="control-label"></label>
+                        <input asp-for="message" placeholder="Ingresa tu mensaje" class="form-control" />
+                        <span asp-validation-for="message" class="text-danger"></span>
+                    </div>
+
+                    
+
+
+
+                <div class="botones" style="margin-top: 20px; display: flex; justify-content: center; align-items: center;">
+                    <button type="submit" value="Registrar" class="btn btn-primary me-3">
+                        Enviar
+                    </button>
+                    <a asp-action="Index" class="btn btn-primary">
+                        Cancelar Envio
+                    </a>
+                </div>
+
+                        <div class="mb-3">
+                            @if (ViewBag.msj != null)
+                            {
+                                <div class="alert alert-success" role="alert">
+                                    @ViewBag.msj
+                                </div>
+                            }
+                        </div>
+                </form>
+            </div>
+        </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<script>
+    window.watsonAssistantChatOptions = {
+        integrationID: "dd6b4f9e-9acb-4b00-8f37-4dd0af5535b2", // The ID of this integration.
+        region: "us-south", // The region your integration is hosted in.
+        serviceInstanceID: "b03a65a3-623f-4005-ad71-f308fb6ff9d9", // The ID of your service instance.
+        onLoad: function (instance) { instance.render(); }
+    };
+    setTimeout(function () {
+        const t = document.createElement('script');
+        t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+        document.head.appendChild(t);
+    });
+</script>

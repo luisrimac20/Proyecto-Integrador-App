@@ -1,0 +1,80 @@
+﻿@model Usuarios
+
+@{
+    Layout = null;
+}   
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/style.css"/>
+</head>
+<body>
+
+    <div class="row mt-5">
+        <div class="col-sm-4 offset-sm-4">
+
+            <div>
+                <center>
+                    <h1>Inicio de Sesion</h1>
+                </center>
+            </div>
+
+
+            <form asp-controller="Acceso" asp-action="Index" method="post">
+                <div class="mb-3">
+                    <img class="img-fluid mx-auto d-block" src="~/Login/Login.png">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" placeholder="Ingresar tu correo electrónico" asp-for="correo">
+                  
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" placeholder="Ingresar tu contraseña" asp-for="clave">
+                </div>
+
+                <div class="d-flex justify-content-center align-items-center" >
+                    <button type="submit" class="btn btn-primary">
+                        Ingresar
+                    </button>
+                </div>
+
+                <div class="d-flex justify-content-center align-items-center" style="margin-top: 10px;">
+                    <p class="centrar" style="display: flex; justify-content: center; align-items: center">
+                        <a asp-action="RegistroUsuario">Registrar Cuenta</a>
+                    </p>
+                </div>
+
+                
+            </form>
+
+
+        </div>
+    </div>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script> 
+
+    
+
+</body>
+</html>
+<script>
+    window.watsonAssistantChatOptions = {
+        integrationID: "dd6b4f9e-9acb-4b00-8f37-4dd0af5535b2", // The ID of this integration.
+        region: "us-south", // The region your integration is hosted in.
+        serviceInstanceID: "b03a65a3-623f-4005-ad71-f308fb6ff9d9", // The ID of your service instance.
+        onLoad: function (instance) { instance.render(); }
+    };
+    setTimeout(function () {
+        const t = document.createElement('script');
+        t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+        document.head.appendChild(t);
+    });
+</script>
+
+
