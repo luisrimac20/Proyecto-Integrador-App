@@ -98,7 +98,7 @@ namespace Proyecto_Medicos.Controllers
         //HISTORIAL DE LAS CITAS
         public async Task<ActionResult> HistorialCitas()
         {
-            var listado = new List<Citas>();
+            var listado = new List<CitasProgramadas>();
 
             using (HttpClient client = new HttpClient())
             {
@@ -106,7 +106,7 @@ namespace Proyecto_Medicos.Controllers
 
                 string rptaApi = await respuesta.Content.ReadAsStringAsync();
 
-                listado = JsonConvert.DeserializeObject<List<Citas>>(rptaApi);
+                listado = JsonConvert.DeserializeObject<List<CitasProgramadas>>(rptaApi);
             }
             return View(listado);
 

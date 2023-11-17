@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Proyecto_Medicos.Models.Citas>
+﻿@model IEnumerable<Proyecto_Medicos.Models.CitasProgramadas>
 
 @{
     ViewData["Title"] = "HistorialCitas";
@@ -13,10 +13,13 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.nomPac)
+                @Html.DisplayNameFor(model => model.codCita)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.codMed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nomPac)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.codEsp)
@@ -34,10 +37,13 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.nomPac)
+                @Html.DisplayFor(modelItem => item.codCita)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.codMed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomPac)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.codEsp)
