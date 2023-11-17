@@ -4,11 +4,12 @@
     ViewData["Title"] = "HistorialCitas";
 }
 
-<h1>HistorialCitas</h1>
+<center>
+    <h1>Historial Citas</h1>
+</center>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
+
 <table class="table">
     <thead>
         <tr>
@@ -30,7 +31,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.fecha)
             </th>
-            <th></th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -55,8 +56,7 @@
                 @Html.DisplayFor(modelItem => item.fecha)
             </td>
             <td>
-                @Html.ActionLink("Reprogramar Cita", "ActualizarCita", new {id=item.codCita}) |
-                
+                    @Html.ActionLink("Reprogramar Cita", "ActualizarCita", new {id=item.codCita}, new { @class="btn btn-primary"})
             </td>
         </tr>
 }

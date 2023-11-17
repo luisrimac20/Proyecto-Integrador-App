@@ -4,76 +4,93 @@
     ViewData["Title"] = "ActualizarCita";
 }
 
-
 <head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Programar Cita</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" href="~/css/style - Copia.css" />
 </head>
 
-<h4>Citas Programadas</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="ActualizarCita">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="codCita" class="control-label"></label>
-                <input asp-for="codCita" class="form-control" />
-                <span asp-validation-for="codCita" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="nomPac" class="control-label"></label>
-                <input asp-for="nomPac" class="form-control" />
-                <span asp-validation-for="nomPac" class="text-danger"></span>
-            </div>  
-            <div class="form-group">
-                 <label asp-for="codMed" class="control-label"></label>
-                 @Html.DropDownList("codMed", ViewBag.Medicos as SelectList,
-                 null, new { @class = "form-control"})
-                    <span asp-validation-for="codMed" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="codEsp" class="control-label"></label>
-                @Html.DropDownList("codEsp", ViewBag.Especialidad as SelectList,
-                null, new { @class = "form-control"} )
-                <span asp-validation-for="codEsp" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="codTurno" class="control-label"></label>
-                @Html.DropDownList("codTurno", ViewBag.Turno as SelectList,
-                null, new { @class = "form-control"} )
-                <span asp-validation-for="codTurno" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="fecha" class="control-label"></label>
-                <input asp-for="fecha" class="form-control" />
-                <span asp-validation-for="fecha" class="text-danger"></span>
-            </div>
-            <div class="botones" style="margin-top: 20px; display: flex; justify-content: center; align-items: center;">
-                <button type="submit" value="Registrar" class="btn btn-primary me-3">
-                    Reprogramar Cita
-                </button>
-                <a asp-action="HistorialCitas" class="btn btn-primary">
-                    Cancelar
-                </a>
-            </div>
 
-            <div class="mb-3">
-                @if (ViewBag.msj != null)
-                {
-                    <div class="alert alert-success" role="alert">
-                        @ViewBag.msj
-                    </div>
-                }
-            </div>
-        </form>
+
+<div class="row">
+    <center>
+        <h1>Programa tu Cita</h1>
+    </center>
+    <div class="container">
+        <div class="mx-auto" style="width: 500px;">
+            <form asp-action="ActualizarCita">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="codCita" class="control-label"></label>
+                    <input asp-for="codCita" class="form-control"/>
+                    <span asp-validation-for="codCita" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="nomPac" class="control-label"></label>
+                    <input asp-for="nomPac" class="form-control"  />
+                    <span asp-validation-for="nomPac" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="codMed" class="control-label"></label>
+                    @Html.DropDownList("codMed", ViewBag.Medicos as SelectList,
+                    null, new { @class = "form-control"})
+                    <span asp-validation-for="codMed" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="codEsp" class="control-label"></label>
+                    @Html.DropDownList("codEsp", ViewBag.Especialidad as SelectList,
+                    null, new { @class = "form-control"} )
+                    <span asp-validation-for="codEsp" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="codTurno" class="control-label"></label>
+                    @Html.DropDownList("codTurno", ViewBag.Turno as SelectList,
+                    null, new { @class = "form-select"} )
+                    <span asp-validation-for="codTurno" class="text-danger"></span>
+
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="fecha" class="control-label"></label>
+                    <input asp-for="fecha" placeholder="Ingresa una fecha yyyy/mm/dd" class="form-control" />
+                    <span asp-validation-for="fecha" class="text-danger"></span>
+                </div>
+
+
+                <div style="margin-top: 20px; display: flex; justify-content: center; align-items: center;">
+                    <button type="submit" value="Registrar" class="btn btn-primary me-3">
+                        Aceptar
+                    </button>
+                    <a asp-action="HistorialCitas" class="btn btn-primary">
+                        Cancelar 
+                    </a>
+                </div>
+
+                <div class="mb-3">
+                    @if (ViewBag.msj != null)
+                    {
+                        <div class="alert alert-success" role="alert">
+                            @ViewBag.msj
+                        </div>
+                    }
+                </div>
+            </form>
+        </div>
     </div>
 </div>
-
 
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
+
+
 
 
 <script>
