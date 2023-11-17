@@ -259,7 +259,152 @@ namespace Proyecto_Medicos.Controllers
         }
 
 
+        public async Task<ActionResult> ActualizarCita()
+        {
+            // para el dropdownlist de la Especialidad
+            var listaemed = new List<Medicos>();
 
+            using (HttpClient cliente = new HttpClient())
+            {
+                // realizar la solicitud GET
+                var respuesta =
+                    await cliente.GetAsync("https://localhost:7179/api/Api/GetMedicos");
+
+                // convertir el contenido a una cadena
+                string respuestaAPI = await respuesta.Content.ReadAsStringAsync();
+
+                // deserializar la cadena (Json) a Lista Genérica de Especialidades
+                listaemed = JsonConvert.DeserializeObject<List<Medicos>>(respuestaAPI);
+            }
+            //
+            ViewBag.Medicos = new SelectList(
+                                     listaemed, "codMed", "nomMed");
+
+
+
+            var listaEspecialidades = new List<Especialidades>();
+
+            using (HttpClient cliente = new HttpClient())
+            {
+                // realizar la solicitud GET
+                var respuesta =
+                    await cliente.GetAsync("https://localhost:7179/api/Api/GetEspecialidades");
+
+                // convertir el contenido a una cadena
+                string respuestaAPI = await respuesta.Content.ReadAsStringAsync();
+
+                // deserializar la cadena (Json) a Lista Genérica de Especialidades
+                listaEspecialidades = JsonConvert.DeserializeObject<List<Especialidades>>(respuestaAPI);
+            }
+            //
+            ViewBag.Especialidad = new SelectList(
+                                     listaEspecialidades, "codEsp", "nomEsp");
+
+
+            var listaTurno = new List<Turno>();
+
+            using (HttpClient cliente = new HttpClient())
+            {
+                // realizar la solicitud GET
+                var respuesta =
+                    await cliente.GetAsync("https://localhost:7179/api/Api/GetTurno");
+
+                // convertir el contenido a una cadena
+                string respuestaAPI = await respuesta.Content.ReadAsStringAsync();
+
+                // deserializar la cadena (Json) a Lista Genérica de Especialidades
+                listaTurno = JsonConvert.DeserializeObject<List<Turno>>(respuestaAPI);
+            }
+            //
+            ViewBag.Turno = new SelectList(
+                                     listaTurno, "codTurno", "nomTurno");
+
+
+
+            // para el dropdownlist de los distritos
+
+            return View(new Citas());
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> ActualizarCita(CitasProgramadas obj)
+        {
+            // permite realizar una solicitud al servicio web api
+            using (var cliente = new HttpClient())
+            {
+
+                StringContent contenido = new StringContent(
+                   JsonConvert.SerializeObject(obj), Encoding.UTF8, "application/json");
+
+                var respuesta =
+                      await cliente.PostAsync("https://localhost:7179/api/Api/AddCita", contenido);
+
+                string respuestaAPI = await respuesta.Content.ReadAsStringAsync();
+                ViewBag.MENSAJE = respuestaAPI;
+            }
+
+            // para el dropdownlist de la Especialidad
+            var listamed = new List<Medicos>();
+
+            using (HttpClient cliente = new HttpClient())
+            {
+                // realizar la solicitud GET
+                var respuesta =
+                    await cliente.GetAsync("https://localhost:7179/api/Api/GetMedicos");
+
+                // convertir el contenido a una cadena
+                string respuestaAPI = await respuesta.Content.ReadAsStringAsync();
+
+                // deserializar la cadena (Json) a Lista Genérica de Especialidades
+                listamed = JsonConvert.DeserializeObject<List<Medicos>>(respuestaAPI);
+            }
+            //
+            ViewBag.Medicos = new SelectList(
+                                     listamed, "codMed", "nomMed");
+
+
+            var listaEspecialidades = new List<Especialidades>();
+
+            using (HttpClient cliente = new HttpClient())
+            {
+                // realizar la solicitud GET
+                var respuesta =
+                    await cliente.GetAsync("https://localhost:7179/api/Api/GetEspecialidades");
+
+                // convertir el contenido a una cadena
+                string respuestaAPI = await respuesta.Content.ReadAsStringAsync();
+
+                // deserializar la cadena (Json) a Lista Genérica de Especialidades
+                listaEspecialidades = JsonConvert.DeserializeObject<List<Especialidades>>(respuestaAPI);
+            }
+            //
+            ViewBag.Especialidad = new SelectList(
+                                     listaEspecialidades, "codEsp", "nomEsp");
+
+
+            var listaTurno = new List<Turno>();
+
+            using (HttpClient cliente = new HttpClient())
+            {
+                // realizar la solicitud GET
+                var respuesta =
+                    await cliente.GetAsync("https://localhost:7179/api/Api/GetTurno");
+
+                // convertir el contenido a una cadena
+                string respuestaAPI = await respuesta.Content.ReadAsStringAsync();
+
+                // deserializar la cadena (Json) a Lista Genérica de Especialidades
+                listaTurno = JsonConvert.DeserializeObject<List<Turno>>(respuestaAPI);
+            }
+            //
+            ViewBag.Turno = new SelectList(
+                                     listaTurno, "codTurno", "nomTurno");
+
+            //
+            return View(obj);
+        }
 
         public async Task<ActionResult> ProgramarCitas(string id)
         {
@@ -381,8 +526,6 @@ namespace Proyecto_Medicos.Controllers
             //
             return View(obj);
         }
-
-
         public async Task<ActionResult> AddContacto(string msj)
         {
             Contacto obj = new Contacto();
