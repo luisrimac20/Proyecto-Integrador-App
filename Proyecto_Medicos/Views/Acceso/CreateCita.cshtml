@@ -30,22 +30,22 @@
                     </div>
                     <div class="form-group">
                         <label asp-for="codMed" class="control-label"></label>
-                        @Html.DropDownList("codMed", ViewBag.Medicos as SelectList,
-                        "Seleccione", new { @class = "form-select"} )
+                    @Html.DropDownList("codMed", ViewBag.Medicos as SelectList,
+                    "Seleccione", new { @class = "form-control"})
                         <span asp-validation-for="codMed" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
                         <label asp-for="codEsp" class="control-label"></label>
                         @Html.DropDownList("codEsp", ViewBag.Especialidad as SelectList,
-                        "Seleccione", new { @class = "form-select"} )
+                    "Seleccione", new { @class = "form-control"} )
                         <span asp-validation-for="codEsp" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
                         <label asp-for="codTurno" class="control-label"></label>
                         @Html.DropDownList("codTurno", ViewBag.Turno as SelectList,
-                        "Seleccione", new { @class = "form-select"} )
+                    "Seleccione", new { @class = "form-control"} )
                         <span asp-validation-for="codTurno" class="text-danger"></span>
 
                     </div>
@@ -67,12 +67,12 @@
                 </div>
 
                         <div class="mb-3">
-                    @if (ViewBag.MENSAJE != null)
-                            {
-                                <div class="alert alert-success" role="alert">
-                                    @ViewBag.MENSAJE
-                                </div>
-                            }
+                        @if (ViewBag.MENSAJE != null)
+                                {
+                                    <div class="alert alert-success" role="alert">
+                                        @ViewBag.MENSAJE
+                                    </div>
+                                }
                         </div>
                 </form>
             </div>

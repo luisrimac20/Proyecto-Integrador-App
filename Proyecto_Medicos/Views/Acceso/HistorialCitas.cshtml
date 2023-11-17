@@ -3,15 +3,12 @@
 @{
     ViewData["Title"] = "HistorialCitas";
 }
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Historial de Citas</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/style.css" />
-    
-</head>
 
-<h1>Historial de Citas</h1>
+<h1>HistorialCitas</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
 <table class="table">
     <thead>
         <tr>
@@ -19,10 +16,10 @@
                 @Html.DisplayNameFor(model => model.codCita)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.codMed)
+                @Html.DisplayNameFor(model => model.nomPac)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.nomPac)
+                @Html.DisplayNameFor(model => model.codMed)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.codEsp)
@@ -43,10 +40,10 @@
                 @Html.DisplayFor(modelItem => item.codCita)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.codMed)
+                @Html.DisplayFor(modelItem => item.nomPac)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.nomPac)
+                @Html.DisplayFor(modelItem => item.codMed)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.codEsp)
@@ -58,14 +55,13 @@
                 @Html.DisplayFor(modelItem => item.fecha)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new {id=item.codCita }) |             
+                @Html.ActionLink("Reprogramar Cita", "ActualizarCita", new {id=item.codCita}) |
+                
             </td>
         </tr>
 }
     </tbody>
 </table>
-
-
 
 <script>
     window.watsonAssistantChatOptions = {
