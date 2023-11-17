@@ -29,7 +29,7 @@ namespace Proyecto_Medicos.Data
                 conexion.Open();
 
 
-                using (SqlDataReader dr = cmd.ExecuteReader())
+                using ( SqlDataReader dr = cmd.ExecuteReader())
                 {
 
                     while (dr.Read())
