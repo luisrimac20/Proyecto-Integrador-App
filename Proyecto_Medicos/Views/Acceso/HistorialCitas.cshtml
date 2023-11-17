@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Proyecto_Medicos.Models.Citas>
+
+@{
+    ViewData["Title"] = "HistorialCitas";
+}
+
+<h1>HistorialCitas</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nomPac)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.codMed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.codEsp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.codTurno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fecha)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomPac)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.codMed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.codEsp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.codTurno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
