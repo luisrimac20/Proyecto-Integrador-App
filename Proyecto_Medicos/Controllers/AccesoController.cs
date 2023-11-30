@@ -418,14 +418,6 @@ namespace Proyecto_Medicos.Controllers
             //
             return View(obj);
         }
-
-
-
-
-        
-
-        
-
         
         public async Task<ActionResult> AddContacto(string msj)
         {
