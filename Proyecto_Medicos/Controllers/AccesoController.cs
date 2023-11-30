@@ -47,7 +47,7 @@ namespace Proyecto_Medicos.Controllers
                 
 
 
-                return RedirectToAction("Index","Home");
+                return RedirectToAction("Medicos","Acceso");
             }
             else
             {
