@@ -16,213 +16,227 @@
     <meta name="viewport" content="width=device-width" />
     <title>Inicio De Sesion</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/style.css" />
-
+    <link rel="stylesheet" href="~/css/style.css" />    
 </head>
 <style>
-    .carousel-item img {
-        width: 100%;
-        height: 500px;
-    }
+  .carousel-item img {
+  width: 100%;
+  height: 500px;
+}
+.container {
+  margin-top: 50px;
+  width: 100%;
+  height: auto;
+}
 
-    .container {
-        margin-top: 50px;
-        width: 100%;
-        height: auto;
-    }
+.card {
+  border: none;
+  
+}
 
-    .card {
-        border: none;
-    }
+.col-md-6{
+  height: auto;
+  justify-content: center;
+  align-items: center;
+}
 
-    .col-md-6 {
-        height: auto;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .noticias {
-        margin: 50px;
-        text-align: center;
-        justify-content: center;
-    }
+.noticias{
+  margin: 50px;
+  text-align: center;
+  justify-content: center;
+}
 
 </style>
 
 
 
 <body>
-    <section>
-        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="active2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="active3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="Imagenes/imagen1.jpg" class="img-fluid" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h1>First slide label</h1>
-                        <p>"El ejercicio no es solo para perder peso, es para mantener tu cuerpo y mente en equilibrio."</p>
-                    </div>
-                </div>
-                <div class="carousel-item active2">
-                    <img src="Imagenes/imagen2.jpg" class="img-fluid" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h1>Second slide label</h1>
-                        <p>"El ejercicio no es solo para perder peso, es para mantener tu cuerpo y mente en equilibrio."</p>
-                    </div>
-                </div>
-                <div class="carousel-item active3">
-                    <img src="Imagenes/imagen3.jpg" class="img-fluid" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h1>Third slide label</h1>
-                        <p>"El ejercicio no es solo para perder peso, es para mantener tu cuerpo y mente en equilibrio."</p>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+<section>
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="active2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="active3"></button>
         </div>
-    </section>
-
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card border-primary mb-3">
-                        <div class="card-header">
-                            <h2 class="card-title" align="center">¿Cómo define la OMS la salud?</h2>
-                        </div>
-                        <div class="card-body">
-                            <p>La salud es un estado de completo bienestar físico, mental y social, y no solamente la ausencia de afecciones o enfermedades». La cita procede del Preámbulo de la Constitución de la Organización Mundial de la Salud, que fue adoptada por la Conferencia Sanitaria Internacional, celebrada en Nueva York del 19 de junio al 22 de julio de 1946, firmada el 22 de julio de 1946 por los representantes de 61 Estados (Official Records of the World Health Organization, Nº 2, p. 100), y entró en vigor el 7 de abril de 1948. La definición no ha sido modificada desde 1948</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card border-secondary mb-3">
-                        <div class="card-body">
-                            <img src="Imagenes/imagen4.jpg" class="img-fluid" alt="...">
-                        </div>
-                    </div>
-                </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="Imagenes/imagen1.jpg" class="img-fluid" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h1 ></h1>
+              <p ></p>
             </div>
-    </section>
-
-
-    <section>
-        <div class="container">
-            <div class="container">
-                <h1 class="noticias">
-                    Eventos
-                </h1>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card" style="width: 100%;">
-                            <div class="row g-0 align-items-center">
-                                <div class="col-md-4 text-center">
-                                    <img src="Imagenes/imagen1.jpg" class="img-fluid" alt="..." style="max-height: 100%;">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="card" style="width: 100%;">
-                            <div class="row g-0 align-items-center">
-                                <div class="col-md-4 text-center">
-                                    <img src="Imagenes/imagen1.jpg" class="img-fluid" alt="..." style="max-height: 100%;">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="card" style="width: 100%;">
-                            <div class="row g-0 align-items-center">
-                                <div class="col-md-4 text-center">
-                                    <img src="Imagenes/imagen1.jpg" class="img-fluid" alt="..." style="max-height: 100%;">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="carousel-item active2">
+            <img src="Imagenes/imagen2.jpg" class="img-fluid" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h1></h1>
+              <p></p>
             </div>
-
+          </div>
+          <div class="carousel-item active3">
+            <img src="Imagenes/imagen3.jpg" class="img-fluid"  alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h1></h1>
+              <p></p>
+            </div>
+          </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card border-primary mb-3">
+          <div class="card-header">
+            <h2 class="card-title" align="center" >¿Cómo define la OMS la salud?</h2>
+          </div>
+          <div class="card-body">
+            <p>La salud es un estado de completo bienestar físico, mental y social, y no solamente la ausencia de afecciones o enfermedades». La cita procede del Preámbulo de la Constitución de la Organización Mundial de la Salud, que fue adoptada por la Conferencia Sanitaria Internacional, celebrada en Nueva York del 19 de junio al 22 de julio de 1946, firmada el 22 de julio de 1946 por los representantes de 61 Estados (Official Records of the World Health Organization, Nº 2, p. 100), y entró en vigor el 7 de abril de 1948. La definición no ha sido modificada desde 1948</p>
+          </div>
         </div>
-
+      </div>
+      <div class="col-md-6">
+        <div class="card border-secondary mb-3">
+          <div class="card-body">
+            <img src="Imagenes/imagen4.jpg" class="img-fluid"  alt="...">
+          </div>
         </div>
+      </div>
+  </div>
+</section>
 
-    </section>
+
+<section>
+  <div class="container">
+    <div class="container">
+      <h1 class="noticias">
+        Eventos
+      </h1>
+      <div class="row">
+          <div class="col-md-4">
+              <div class="card" style="width: 100%;">
+                  <div class="row g-0 align-items-center">
+                      <div class="col-md-4 text-center">
+                          <img src="Imagenes/imagen5.jpg" class="img-fluid" alt="..." >
+                      </div>
+                      <div class="col-md-8">
+                          <div class="card-body">
+                              <h5 class="card-title">Día Mundial de la Salud</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+  
+          <div class="col-md-4">
+              <div class="card" style="width: 100%;">
+                  <div class="row g-0 align-items-center">
+                      <div class="col-md-4 text-center">
+                          <img src="Imagenes/imagen6.jpg" class="img-fluid" alt="..." >
+                      </div>
+                      <div class="col-md-8">
+                          <div class="card-body">
+                              <h5 class="card-title">Ferias de salud
+                              </h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+  
+          <div class="col-md-4">
+              <div class="card" style="width: 100%;">
+                  <div class="row g-0 align-items-center">
+                      <div class="col-md-4 text-center">
+                          <img src="Imagenes/imagen7.jpg" class="img-fluid" alt="..." >
+                      </div>
+                      <div class="col-md-8">
+                          <div class="card-body">
+                              <h5 class="card-title">Campañas de vacunación
+                              </h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  </div>
+  </div>
+  
+  </div>
+  
+  </section>
 
 
-    <section>
-        <div class="container">
-            <h1 class="noticias" align="center">
-                Noticias
-            </h1>
-            <div class="d-flex flex-row justify-content-center align-items-center">
-                <div class="card mx-2" style="width: 50rem;">
-                    <img src="Imagenes/imagen1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-                <div class="card mx-2" style="width: 50rem;">
-                    <img src="Imagenes/imagen1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-                <div class="card mx-2" style="width: 50rem;">
-                    <img src="Imagenes/imagen1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
+<section>
+  <div class="container">
+    <h1 class="noticias" align="center">
+        Noticias
+    </h1>
+    <div class="d-flex flex-row justify-content-center align-items-center">
+        <div class="card mx-2" style="width: 50rem;">
+            <img src="Imagenes/imagen5.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Clínica Jesus del Norte presente en la Cumbre Internacional de Mujeres Líderes</h5>
+                <p class="card-text">En la reciente edición de la Cumbre Internacional de Mujeres Líderes realizado en Arequipa y organizado por la ONG Coplan, tres de nuestras gerentes generales del Grupo San Pablo: la Dra. Vanessa Hinojosa de la Clínica San Gabriel, la Dra. Cory Pérez de la Clínica San Pablo Trujillo y la Dra. Carmen Huerta de la Clínica Jesús del Norte, cooperaron activamente en el panel denominado “Participación de la Mujer en los diversos ámbitos de la empresa, sociedad y gobierno”. </p>
+                <a href="https://www.jesusdelnorte.com.pe/clinica-jesus-del-norte-presente-en-la-cumbre-internacional-de-mujeres-lideres/" class="btn btn-primary">Leer Mas</a>
             </div>
         </div>
-    </section>
+        <div class="card mx-2" style="width: 50rem;">
+            <img src="Imagenes/imagen6.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Clínica Jesús del Norte considerada entre las mejores instituciones de salud en el Perú, según ranking de América Economía</h5>
+                <p class="card-text">En la reciente edición de la Cumbre Internacional de Mujeres Líderes realizado en Arequipa y organizado por la ONG Coplan, tres de nuestras gerentes generales del Grupo San Pablo: la Dra. Vanessa Hinojosa de la Clínica San Gabriel, la Dra. Cory Pérez de la Clínica San Pablo Trujillo y la Dra. Carmen Huerta de la Clínica Jesús del Norte, cooperaron activamente en el panel denominado.“Participación de la Mujer en los diversos ámbitos de la empresa, sociedad". </p>
+                <a href="https://www.jesusdelnorte.com.pe/clinica-jesus-del-norte-considerada-entre-las-mejores-instituciones-de-salud-en-el-peru-segun-ranking-de-america-economia/" class="btn btn-primary">Leer mas</a>
+            </div>
+        </div>
+        <div class="card mx-2" style="width: 50rem;">
+            <img src="Imagenes/imagen7.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Clínica Jesús del Norte potencia su unidad materna con el mejor ecógrafo del Perú</h5>
+                <p class="card-text">En la reciente edición de la Cumbre Internacional de Mujeres Líderes realizado en Arequipa y organizado por la ONG Coplan, tres de nuestras gerentes generales del Grupo San Pablo: la Dra. Vanessa Hinojosa de la Clínica San Gabriel, la Dra. Cory Pérez de la Clínica San Pablo Trujillo y la Dra. Carmen Huerta de la Clínica Jesús del Norte, cooperaron activamente en el panel denominado. “Participación de la Mujer en los diversos ámbitos de la empresa, sociedad y gobierno”.</p>
+                <a href="https://www.jesusdelnorte.com.pe/clinica-jesus-del-norte-potencia-su-unidad-materna-con-el-mejor-ecografo-del-peru/" class="btn btn-primary">Leer mas</a>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
 
 
 
 </body>
 </html>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-        crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" 
+integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" 
+crossorigin="anonymous">
 </script>
 
 
+<script>
+    window.watsonAssistantChatOptions = {
+        integrationID: "dd6b4f9e-9acb-4b00-8f37-4dd0af5535b2", // The ID of this integration.
+        region: "us-south", // The region your integration is hosted in.
+        serviceInstanceID: "b03a65a3-623f-4005-ad71-f308fb6ff9d9", // The ID of your service instance.
+        onLoad: function (instance) { instance.render(); }
+    };
+    setTimeout(function () {
+        const t = document.createElement('script');
+        t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+        document.head.appendChild(t);
+    });
+</script>
